@@ -1,0 +1,7 @@
+{
+  "short_name": "SafeCode",
+  "name": "SafeCode",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "landscape",
+}
