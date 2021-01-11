@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author thunder
+ *
+ */
+module klarnatests {
+}
