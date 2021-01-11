@@ -1,0 +1,22 @@
+.App {
+  padding: 2rem 0;
+  text-align: center;
+  background-color: black;
+  height: 100vh;
+  color: white;
+
+  .numgrid {
+    display: grid;
+    width: 150px;
+    margin: 1rem auto;
+    grid-template-columns: repeat(50px, 3);
+    grid-template-rows: auto;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    grid-template-areas: 
+      "key-1 key-2 key-3"
+      "key-4 key-5 key-6"
+      "key-7 key-8 key-9"
+      ". key-0 lock";
+  }
+}
