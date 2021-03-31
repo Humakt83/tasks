@@ -1,0 +1,13 @@
+.status {
+  background: rgb(242,242,242);
+  height: 24px;
+  border-radius: 12px;
+  width: 102px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  svg {
+    margin-right: 5px;
+  }
+
+}

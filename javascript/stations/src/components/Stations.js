@@ -1,21 +1,27 @@
+import {useState, useEffect} from 'react';
 import './Stations.scss';
-import {STATIONS} from '../api/stations-api';
-import { useQuery } from '@apollo/client';
+import {getStations} from '../api/stations-api';
+import Station from './Station';
 
 function Stations() {
-  const { loading, error, data } = useQuery(STATIONS);
+  const [stations, setStations] = useState([]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  useEffect(() => {
+    const loadStations = async () => {
+      const response = await getStations();
+      setStations(response.data);
+    };
+    loadStations();
+  }, []);
 
   return (
     <div className="stations">
       <h1>Your stations</h1>      
-      <ul>
-        {data.stations.map((station, index) => {
-          return <li key={index}>{station.name}</li>
+      <div className="stations_list">
+        {stations.map((station, index) => {
+          return <Station key={index} station={station} />
         })}
-      </ul>
+      </div>
     </div>
   );
 }

@@ -1,12 +1,7 @@
-import { gql } from '@apollo/client';
+import axios from 'axios';
 
-const STATIONS = gql`
-  query GetStations {
-    stations {
-      station_ID
-      name
-    }
-  }
-`;
+const getStations = async (prefix = '') => {
+  return axios.get(prefix + 'res/stations.json');
+};
 
-export {STATIONS};
+export {getStations};

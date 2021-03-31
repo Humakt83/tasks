@@ -1,13 +1,21 @@
-import { ApolloProvider } from '@apollo/client';
+
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Stations from './components/Stations';
-import './App.css';
-import client from './api/client';
+import './App.scss';
+import StationDetails from './components/details/StationDetails';
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Stations />
-    </ApolloProvider>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Stations />
+        </Route>
+        <Route path="/station/:id">
+          <StationDetails />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
